@@ -47,6 +47,6 @@ def get_connection(db_type, db_host, db_name, db_user, db_pass):
 def get_tables(path):
     tables = pd.read_csv(path, sep=':')
     tables.columns = tables.columns.str.strip()  # Remove leading/trailing spaces from column names
-    filtered_tables = tables.query("to_be_loaded == 'yes'")  # Filter the tables
-    return filtered_tables
+    return tables.query("to_be_loaded == 'yes'")  # Filter the tables
+
 
